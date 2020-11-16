@@ -70,7 +70,8 @@ namespace SeleniumExamples
             nUnitVersionResult.Click();
 
             //Validate that nUnit has beed added to the project
-            var addedPackageNameText = driver.FindElement(nUnitResultBy).Text;
+            wait.Until(ExpectedConditions.ElementIsVisible(nUnitAddedResultBy));
+            var addedPackageNameText = driver.FindElement(nUnitAddedResultBy).Text;
             Assert.AreEqual(expectedResult, addedPackageNameText);
         }
 
